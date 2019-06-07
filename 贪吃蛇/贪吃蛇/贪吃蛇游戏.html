@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>贪吃蛇小游戏</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .map {
+        width: 800px;
+        height: 800px;
+        background-color:gray;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="map"></div>
+    <script src="food.js"></script>
+    <script src="snack.js"></script>
+    <script src="game.js"></script>
+    <script>
+      //测试
+      //   let food = new Food();
+      //   food.init(map);
+
+      //   let snack = new Snack();
+      //   snack.init(map);
+      //   snack.move(food);
+
+      let game = new Game(document.getElementsByClassName("map")[0]);
+      game.init();
+    </script>
+  </body>
+</html>

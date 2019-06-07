@@ -1,0 +1,1 @@
+!function(){console.log("IM is index");console.log(window)}()(function(){window.alert("hha")});

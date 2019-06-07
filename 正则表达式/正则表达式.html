@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   const regExp = /a+c/; //匹配一个或多个a后面跟着'c'的字符串；
+      //   regExp.test("acbc"); //true
+      //   regExp.test("aacb"); //true
+
+      //   const regExp = new RegExp("a+c");
+      //   console.log(regExp.test("aacbc")); //true
+
+      //   \ 分隔符
+      //   const regExp1 = /a*/; // 匹配 0 个或者多个 a
+      //   const regExp2 = /a\*/; // 匹配'a*' 字符串
+      //   console.log(regExp1.test("")); // true
+      //   console.log(regExp2.test("")); // false
+      //   console.log(regExp2.test("a*")); // true
+
+      //   ^ 以..什么开头
+      //   const regExp1 = /^A/; // 匹配以'A'开头的字符串
+      //   console.log(regExp1.test("an A")); // false
+      //   console.log(regExp1.test("An E")); // true
+      //   const regExp2 = /[^abc]/; // 匹配任何没有包含在方括号中的字符,在括号内是去反
+      //   console.log(regExp2.test("abc")); // false
+      //   console.log(regExp2.test("efg")); // true
+
+      //  $ 以..结束
+      //匹配以'abc'结尾的字符串；
+      //   const regExp1 = /abc$/;
+      //   //匹配以'abc'开头又以'abc'结尾的字符串，即匹配'abc'。
+      //   const regExp2 = /^abc$/;
+      //   console.log(regExp1.test("aaabc")); // true
+      //   console.log(regExp2.test("aaabc")); // false
+      //   console.log(regExp2.test("abc")); // true
+
+      //  * 0----多
+      // 匹配'a'后面跟着任意数量的‘b'的字符串。
+      //   const regExp = /ab*/;
+      //   console.log(regExp.test("a")); // true
+      //   console.log(regExp.test("ab")); // true
+      //   console.log(regExp.test("bbbc")); // false
+
+      //  + 1----多
+      // 匹配至少一个'a'
+      //   const regExp = /a+/;
+      //   console.log(regExp.test("a")); // true
+      //   console.log(regExp.test("aab")); // true
+      //   console.log(regExp.test("b")); // false
+
+      //  ?  0---1
+      //匹配 'l','el','ele','le'四种字符串
+    //   const regExp = /e?le?/;
+    //   console.log(regExp.test("ele")); // true
+    //   console.log(regExp.test("angel")); // true
+    //   console.log(regExp.test("angle")); // true
+    //   console.log(regExp.test("oslo")); // true
+
+
+    // //   如果紧跟在任何量词 *、 +、? 或 {} 的后面，将会使量词变为非贪婪的（匹配尽量少的字符），和缺省使用的贪婪模式（匹配尽可能多的字符）正好相反。
+
+    //   // 匹配0个数字
+    //   const regExp1 = /\d*?/;
+    //   // 匹配1个数字
+    //   const regExp2 = /\d+?/;
+    //   // 匹配1个'a'
+    //   const regExp3 = /a{1,3}?/;
+    //   let str = "123a";
+    //   console.log(str.replace(regExp1, "abc")); //abc123a
+    //   console.log(str.replace(regExp2, "abc")); // abc23a
+    //   console.log(str.replace(regExp3, "abc")); // 123abc
+    </script>
+  </body>
+</html>

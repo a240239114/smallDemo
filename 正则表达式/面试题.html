@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //敏感词过滤 比如：“我草你妈哈哈背景天胡景涛哪肉涯剪短发欲望” 过滤：‘草肉欲胡景涛’
+      //    let str = '我草你妈哈哈背景天胡景涛哪肉涯剪短发欲望';
+      //    let reg = /草|肉|你妈|胡景涛/g;
+      //    let res = str.replace(reg,function(match){//match是当前被匹配的内容
+      //        let length = match.length;
+      //        let str1;
+      //        switch(length){
+      //           case 1:
+      //               str1 ='*';
+      //               break;
+      //           case 2:
+      //               str1 ='**';
+      //               break;
+      //           case 3:
+      //               str1 ="***";
+      //               break;
+      //        }
+      //        return str1;
+      //    });
+      //    console.log(res);
+
+      //   "IT面试题博客中包含很多  <a href='http://hi.baidu.com/mianshiti/blog/category/微软面试题'> 微软面试题 </a> ";
+      //   let str ='IT面试题博客中包含很多  <a href="http://hi.baidu.com/mianshiti/blog/category/微软面试题">微软面试题</a>';
+      //   let regExp = /<a(?:\s)+href="(.*)"(?: [^>]*)*>/;
+      //   console.log(str.match(regExp));
+
+      let imgs = [
+        "http://img.host.com/images/fds.jpg",
+        "https://img.host.com/images/fjlj.jpg",
+        "http://img.host.com/images/djalsdf.png",
+        "https://img.host.com/images/adsjfl.png",
+        "http://img.host.com/image/jasdlf.jpg"
+      ];
+      imgs = imgs.map(img => {
+        return img.replace(/http:(\/\/.+\.jpg)/, function(match, p1) {
+          return p1;
+        });
+      });
+      console.log(imgs);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>时钟demo</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="outside">
+      <div class="inside">
+        <div class="face"></div>
+        <ul>
+          <li class="pointer"></li>
+          <li class="pointer"></li>
+          <li class="pointer"></li>
+          <li class="pointer"></li>
+          <li class="pointer"></li>
+          <li class="pointer"></li>
+        </ul>
+        <div class="center"></div>
+
+        <div class="hour"></div>
+        <div class="munite"></div>
+        <div class="second"></div>
+      </div>
+    </div>
+
+     <script>
+            window.onload = function () {
+                const hourHand = document.querySelector(".hour");
+                const minuteHand = document.querySelector(".munite");
+                const secondHand = document.querySelector(".second");
+                const clock = document.querySelector(".clock");
+    
+                function setDate() {
+                    const today = new Date();
+    
+                    const second = today.getSeconds();
+                    const secondDeg = (second / 60) * 360 + 360;
+                    secondHand.style.transform = `rotate(${secondDeg}deg)`;
+    
+                    const minute = today.getMinutes();
+                    const minuteDeg = (minute / 60) * 360;
+                    minuteHand.style.transform = `rotate(${minuteDeg}deg)`;
+    
+                    const hour = today.getHours();
+                    const hourDeg = (hour / 12) * 360;
+                    hourHand.style.transform = `rotate(${hourDeg}deg)`;
+                }
+    
+                setInterval(setDate, 1000);
+            }
+        </script>
+  </body>
+</html>

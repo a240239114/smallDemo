@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.document{
+   height: 100vh;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+.top{
+  flex: 1;
+  display: flex;
+}
+
+.one{
+  flex: 1;
+  background: linear-gradient(#fd79a8 20%,#0984e3 80%);
+}
+
+.two{
+    flex: 1;
+    background: linear-gradient(#fd79a8 50%,#0984e3 50%);
+  }
+
+.three{
+    flex: 1;
+    background: linear-gradient(#fd79a8 50%,#0984e3 50%);
+    background-size: 100% 30px;
+}
+
+
+.bottom{
+    flex: 1;
+    display: flex;
+}
+
+.four{
+    flex:1;
+    background: linear-gradient(#fd79a8 30%,#0984e3 0);
+    background-size: 100% 30px;
+}
+
+.five{
+    flex:1;
+    background: linear-gradient(
+        #fd79a8 33.3%,
+        #0984e3 0,
+        #0984e3 66.6%,
+        #00cec9 0  
+    );
+    background-size:100% 30px; 
+}

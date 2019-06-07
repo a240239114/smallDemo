@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <link rel="stylesheet" href="index1.css" />
+    <script src="common.js"></script>
+  </head>
+  <body>
+    <div class="slidesShowMiddle">      <!-- 箭头 -->
+      <img src="images/zuo.png" class="zuo" alt="" />
+      <img src="images/you.png" class="you" alt="" />
+
+      <div class="slides" id="slides">
+        <input type="radio" name="r" id="r1" checked />
+        <input type="radio" name="r" id="r2" />
+        <input type="radio" name="r" id="r3" />
+        <input type="radio" name="r" id="r4" />
+        <input type="radio" name="r" id="r5" />
+
+        <div class="slide s1" id="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+      </div>
+
+      <div class="navigation">
+        <label for="r1" class="bar"></label>
+        <label for="r2" class="bar"></label>
+        <label for="r3" class="bar"></label>
+        <label for="r4" class="bar"></label>
+        <label for="r5" class="bar"></label>
+      </div>
+    </div>
+
+    <script>
+      var labels = document.getElementsByTagName("label");
+      //  console.dir(labels);
+      var slideWidth = parseInt(getStyle(my$("slide"), "width"));
+      //  console.log(slideWidth);
+      var slides = my$("slides");
+      //  console.log(slides);
+      var btn = document.getElementsByTagName("img");
+      console.dir(btn);
+      //左箭头
+      var zuobtn = btn[0];
+      var youbtn = btn[1];
+
+      // slides.style.left = 0+"px";
+      // element.style[attr] = current + "px";
+
+      var count = 0;
+      var last = 0;
+
+      //给底下的按钮添加点击事件
+      for (let i = 0; i < labels.length; i++) {
+
+        console.log(i);
+        labels[i].onclick = function() {
+           count++;
+
+           if(count%2==0){//第偶数次点击就记录
+              last = i;
+           }
+
+          //  console.log('count====>'+count);
+          //  console.log('last====>'+last); 
+          //  console.log('i-last ====>'+(i - last));
+
+
+          // console.log(i + "=====" + slideWidth);
+          animateD(slides, {
+            left: -i * slideWidth
+          });
+        };
+      }
+
+      var pic = 0;
+      //给左按钮添加点击事件
+      zuobtn.onclick = function() {
+        pic++;
+        if (pic > 4) {
+          pic = 0;
+          slides.style.left = 0 + "px";
+        }
+
+        animateD(slides, { left: -pic * slideWidth });
+        // console.log(pic);
+      };
+
+      //给右按钮添加点击事件
+      youbtn.onclick = handelRight;
+      function handelRight() {
+        pic--;
+        if (pic < 0) {
+          pic = 4;
+          slides.style.left = -2800 + "px";
+          console.log(getStyle(slides, "left"));
+        }
+
+        animateD(slides, { left: -pic * slideWidth });
+
+        console.log(pic);
+      }
+
+      var timeId;
+
+      // window.onload = function(){
+      //   timeId = setInterval(function(){handelRight();},6000)
+      // }
+
+      // //滑过就清除定时器
+      // slides.onmouseover= function(){
+      //   console.log('hah')
+      //    clearInterval(timeId);
+      // }
+
+      //滑出就开启定时器
+      // slides.onmouseout = function(){
+      //   timeId = setInterval(function(){handelRight();},6000)
+      // }
+    </script>
+  </body>
+</html>
